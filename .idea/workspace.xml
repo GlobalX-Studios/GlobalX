@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfd84ef4-8549-467d-bd83-536d2980ce35" name="Changes" comment="#13 Finished (1.1.0-Beta)" />
+    <list default="true" id="bfd84ef4-8549-467d-bd83-536d2980ce35" name="Changes" comment="#11 Finished 1.0.0-Release" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +149,7 @@
       <workItem from="1721036177702" duration="35000" />
       <workItem from="1721036231475" duration="11188000" />
       <workItem from="1721215884682" duration="2013000" />
-      <workItem from="1722508970189" duration="1033000" />
+      <workItem from="1722508970189" duration="1333000" />
     </task>
     <task id="LOCAL-00001" summary="#3 Finishing GlobalCMD and testing it">
       <created>1651841288636</created>
@@ -291,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1686159205394</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="#11 Finished 1.0.0-Release">
+      <option name="closed" value="true" />
+      <created>1722515980444</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1722515980444</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +330,8 @@
     <MESSAGE value="#11 Adding /globalchat alias" />
     <MESSAGE value="#12 Finished (1.0.3-Alpha)" />
     <MESSAGE value="#13 Finished (1.1.0-Beta)" />
-    <option name="LAST_COMMIT_MESSAGE" value="#13 Finished (1.1.0-Beta)" />
+    <MESSAGE value="#12 Finished 1.0.0-Release" />
+    <MESSAGE value="#11 Finished 1.0.0-Release" />
+    <option name="LAST_COMMIT_MESSAGE" value="#11 Finished 1.0.0-Release" />
   </component>
 </project>
