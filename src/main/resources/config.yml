@@ -6,8 +6,12 @@
 #
 # Main Config
 
-CommandClickEvent: "/send %player% %target%"
-TextHoverEvent: "&7&oClick to go!"
 
-GlobalChatPrefix: "!"
+HoverAndClickText:
+  Enable: true
+  Text: "&7&oClick to go!"
+  Command: "/send %player% %target%"
 
+GlobalChatPrefix:
+  Enable: true
+  Prefix: "!"
