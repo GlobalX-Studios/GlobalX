@@ -13,13 +13,13 @@ GlobalX is a feature-rich plugin designed to expand chat communication on Minec
 - **Regular Updates**: The author actively maintains and improves the plugin, addressing deprecation warnings, adding features like global chat prefixes, and introducing custom variables in messages.
 - **Ease of Use**: GlobalX is designed to be intuitive and straightforward to configure and use. Server owners can tailor settings to their specific needs.
 
-Still not convinced? Find out more in our Why choose GlobalX? Page
+Still not convinced? Find out more asking on our [discord server](https://dsc.gg/globalx-discord)!
 
 ### Useful links
 
-**⬇️ DOWNLOADS:** The latest version of the plugin can be found on our Downloads page on our website, or here on spigot all the way up to the page
+**⬇️ DOWNLOADS:** The latest version of the plugin can be found here on spigot all the way up to the page on the top right corner
 
-**📕 DOCUMENTATION:** GlobalX has a full documentation where you can find permission nodes, the command list and more information about the setup of the plugin
+**📕 DOCUMENTATION:** GlobalX has a [full documentation](https://sgattix-omnicraft-development-te.gitbook.io/globalx-wiki) where you can find permission nodes, the command list and more information about the setup of the plugin
 
 **❓ SUPPORT:** If you run in some troubles, don’t worry, we got you. Our Discord server has support tickets for all your needs, including bug reports or general help with the plugin
 
