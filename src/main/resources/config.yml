@@ -8,3 +8,5 @@
 
 CommandClickEvent: "/send %player% %target%"
 TextHoverEvent: "&7&oClick to go!"
+
+GlobalChatPrefix: "!"

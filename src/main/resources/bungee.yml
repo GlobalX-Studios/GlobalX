@@ -1,5 +1,5 @@
 name: GlobalX
-version: '1.0.0-Alpha'
+version: '1.0.1-Beta'
 main: it.omnisys.plugin.GlobalX
 description: "A magic GlobalChat plugin"
 author: "GX_Regent-2.0 & Sgattix"
