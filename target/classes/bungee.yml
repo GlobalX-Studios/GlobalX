@@ -1,0 +1,5 @@
+name: GlobalX
+version: '1.0.0-Release'
+main: it.omnisys.plugin.GlobalX
+description: "A magic GlobalChat plugin"
+author: "Sgattix"

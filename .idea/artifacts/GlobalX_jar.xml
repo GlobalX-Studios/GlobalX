@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GlobalX:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GlobalX_jar</output-path>
+    <root id="archive" name="GlobalX.jar">
+      <element id="module-output" name="GlobalX" />
+    </root>
+  </artifact>
+</component>

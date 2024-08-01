@@ -1,0 +1,50 @@
+#    ________      __          __   _  __
+#   / ____/ /___  / /_  ____ _/ /  | |/ /
+#  / / __/ / __ \\/ __ \\/ __ `/ /   |   /
+# / /_/ / / /_/ / /_/ / /_/ / /   /   |
+# \\____/_/\\____/_.___/\\__,_/_/   /_/|_|
+#
+# Messages Config
+
+#
+# Prefixes and static values
+#
+prefix: "&b&lGLOBALX &7»"
+ServerNameFormat: "&7&o[%serverName%]"
+ConsoleServer: "&c&oNo Server&7"
+ConsoleNameFormat: "&b&lCONSOLE &f"
+AnonymousName: "&cAnonymous&7"
+GlobalFormat: "%prefix% %serverNameFormat% - %player_name% - &f%message%"
+PrivateMessageFormat:
+  Send: "&7[&bYou &7-> %player% (%server%&7)] » &f%message%"
+  Receive: "&7[&7%player% (%server%&7) -> &bYou&7] » &f%message%"
+  SocialSpy: "&7[&bSocialSpy&7] &7[&7%player% (%playerServer%&7) -> %target% (%targetServer%&7)] » &f%message%"
+
+#
+# Errors
+#
+InsuffArgs: "%prefix% &cInsufficient Arguments! Please use:\n &7/global <message> or &7/global <serverGroup> <message>"
+InsuffArgsSuggestionHover: "&7&oClick to suggest command!"
+OnlyPrefixMSG: "%prefix% &cYou can't globalchat an empty message!"
+CantUseInCoolDown: "%prefix% &cYou can't globalchat while in cooldown!"
+NoPermsMSG: "%prefix% &cYou are not allowed to do that!"
+PrefixChattingDisabled: "%prefix% &cGlobalChatting with prefix is disabled in configuration!"
+NoPrivateMessagesAllowed: "%prefix% &cThe private messages service has been disabled by an administrator"
+PrivateMessagesNotAllowed: "%prefix% &cThat player doesn't allow any private messages!"
+PrivateMessageSelfDisabled: "%prefix% &cYou can't message while you have private messages disabled! "
+UnknownPlayer: "%prefix% &cUnknown Player! Check if they're online."
+InsuffArgsMessage: "%prefix% &cInsufficient arguments! Please use:\n &7/msg <player> <message>"
+NoActiveConversations: "%prefix% &cYou don't have any active conversations!"
+CannotMessageSelf: "%prefix% &cYou cannot message yourself!"
+NoActiveServers: "%prefix% &cNo active servers found in this group!"
+
+#
+# Success Messages
+#
+ConfigReloadedMSG: "%prefix% &aConfig reloaded!"
+PrivateMessagesDisabled: "%prefix% &aYou have successfully disabled private messages"
+PrivateMessagesEnabled: "%prefix% &aYou have successfully enabled private messages"
+GlobalChatToggledOn: "%prefix% &fGlobalChat toggled &aon&f!"
+GlobalChatToggledOff: "%prefix% &fGlobalChat toggled &coff&f!"
+SocialSpyToggledOn: "%prefix% &fSocialSpy toggled &aon&f!"
+SocialSpyToggledOff: "%prefix% &fSocialSpy toggled &coff&f!"
