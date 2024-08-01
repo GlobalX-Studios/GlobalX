@@ -8,11 +8,12 @@
 
 Prefix: "&b&lGLOBALX &7»"
 ServerNameFormat: "&7&o[%serverName%]"
-ConsoleServer: "&8[&cNo Server&8]"
+ConsoleServer: "&cNo Server&7"
 ConsoleNameFormat: "&b&lCONSOLE &f"
 InsuffArgs: "%prefix% &cInsufficient Arguments! Please use:\n&7/global <message>"
 InsuffArgsSuggestionHover: "&7&oClick to suggest command!"
 OnlyPrefixMSG: "%prefix% &cYou can't globalchat an empty message!"
+CantUseInCoolDown: "%prefix% &cYou can't globalchat while in cooldown!"
 NoPermsMSG: "%prefix% &cYou are not allowed to do that!"
 ConfigReloadedMSG: "%prefix% &aConfig reloaded!"
 GlobalFormat: "%prefix% %serverNameFormat% - %player_name% - &f%message%"

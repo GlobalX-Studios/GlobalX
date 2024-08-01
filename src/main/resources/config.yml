@@ -15,3 +15,37 @@ HoverAndClickText:
 GlobalChatPrefix:
   Enable: true
   Prefix: "!"
+
+Permissions:
+  Owner: "globalx.globalchat.use.owner"
+  Manager: "globalx.globalchat.use.manager"
+  SrAdmin: "globalx.globalchat.use.sradmin"
+  Admin: "globalx.globalchat.use.admin"
+  Youtuber: "globalx.globalchat.use.youtuber"
+  Streamer: "globalx.globalchat.use.streamer"
+
+Groups:
+  Owner:
+    Prefix: "&4&lOWNER &4"
+    CoolDown: 0
+    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+  Manager:
+    Prefix: "&c&lMANAGER &c"
+    CoolDown: 0
+    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+  SrAdmin:
+    Prefix: "&c&lSRADMIN &c"
+    CoolDown: 0
+    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+  Admin:
+    Prefix: "&c&lADMIN &c"
+    CoolDown: 0
+    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+  Youtuber:
+    Prefix: "&c&lYOUTUBER &c"
+    CoolDown: 10
+    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+  Streamer:
+    Prefix: "&5&lSTREAMER &5"
+    CoolDown: 10
+    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
