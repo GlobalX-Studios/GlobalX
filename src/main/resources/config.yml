@@ -22,6 +22,8 @@ AllowConsolePrivateMessaging:
   Receiving: true
 
 ConversationsAutoDelete: 30 # Seconds after last activity
+NicknameReset: 10 # Seconds after a message has been sent
+ToggleStaffChat: true # If StaffChat should be toggled for the player by default
 
 ServerGroups:
   pvp:
@@ -46,43 +48,57 @@ Groups:
   Owner:
     Prefix: "&4&lOWNER &4"
     CoolDown: 0
-    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% %serverNameFormat% - &7[&eSC&7] %player_prefix%%player_name% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix%%playerName%&f: %message%"
     Permission: "globalx.globalchat.use.owner"
     ChatPrefixes: ["%defaultPrefix%ow", "!"]
   Manager:
     Prefix: "&c&lMANAGER &c"
     CoolDown: 0
-    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% %serverNameFormat% - &7[&eSC&7] %player_prefix%%player_name% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix%%playerName%&f: %message%"
     Permission: "globalx.globalchat.use.manager"
     ChatPrefixes: ["%defaultPrefix%mngr", "!"]
   SrAdmin:
     Prefix: "&c&lSRADMIN &c"
     CoolDown: 0
-    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% %serverNameFormat% - &7[&eSC&7] %player_prefix%%player_name% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix%%playerName%&f: %message%"
     Permission: "globalx.globalchat.use.sradmin"
     ChatPrefixes: ["%defaultPrefix%srad", "!"]
   Admin:
     Prefix: "&c&lADMIN &c"
     CoolDown: 0
-    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% %serverNameFormat% - &7[&eSC&7] %player_prefix%%player_name% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix%%playerName%&f: %message%"
     Permission: "globalx.globalchat.use.admin"
     ChatPrefixes: ["%defaultPrefix%ad", "!"]
   Youtuber:
     Prefix: "&c&lYOUTUBER &c"
     CoolDown: 10
-    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% %serverNameFormat% - &7[&eSC&7] %player_prefix%%player_name% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix%%playerName%&f: %message%"
     Permission: "globalx.globalchat.use.youtuber"
     ChatPrefixes: ["global:"]
   Streamer:
     Prefix: "&5&lSTREAMER &5"
     CoolDown: 10
-    ChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %serverNameFormat% - %player_prefix%%player_name% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% %serverNameFormat% - &7[&eSC&7] %player_prefix%%player_name% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix%%playerName%&f: %message%"
     Permission: "globalx.globalchat.use.streamer"
     ChatPrefixes: ["global:"]
   Anon:
     Prefix: "&7&lANON &7"
     CoolDown: 10
-    ChatFormat: "%prefix% %player_prefix% &r&7- &f%message%"
+    GlobalChatFormat: "%prefix% %player_prefix% &r&7- &f%message%"
+    StaffChatFormat: "%prefix% &7[&eSC&7] %player_prefix% &r&7- &f%message%"
+    NicknameFormat: "&7[&b&lGC&r&7] %player_prefix% &f: %message%"
     Permission: "globalx.globalchat.use.anon"
     ChatPrefixes: ["global:"]
   # Add more groups here if needed

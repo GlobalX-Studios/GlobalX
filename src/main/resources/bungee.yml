@@ -3,3 +3,6 @@ version: '${project.version}'
 main: it.omnisys.plugin.GlobalX
 description: "A magic GlobalChat plugin"
 author: "Sgattix"
+softDepends:
+  - LuckPerms
+  - PAPIProxyBridge

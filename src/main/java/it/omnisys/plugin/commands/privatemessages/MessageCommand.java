@@ -1,33 +1,31 @@
 package it.omnisys.plugin.commands.privatemessages;
 
 import it.omnisys.plugin.GlobalX;
+import it.omnisys.plugin.chat.Chat;
+import it.omnisys.plugin.chat.PrivateChat;
 import it.omnisys.plugin.commands.AddedCommand;
-import it.omnisys.plugin.managers.PermissionManager;
+import it.omnisys.plugin.managers.chat.PrivateChatManager;
+import it.omnisys.plugin.managers.permissions.Permission;
+import it.omnisys.plugin.managers.permissions.PermissionManager;
 import it.omnisys.plugin.utils.ChatUtils;
 import lombok.Getter;
-import lombok.Setter;
 import net.md_5.bungee.api.CommandSender;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
-import net.md_5.bungee.api.scheduler.ScheduledTask;
 import net.md_5.bungee.config.Configuration;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class MessageCommand extends Command implements AddedCommand {
 
     private static final Configuration messageConfig = GlobalX.getMessagesConfig();
     private static final Configuration mainConfig = GlobalX.getMainConfig();
+    static Chat privateChat = PrivateChatManager.getPrivateChat();
     @Getter
-    private static final HashMap<CommandSender, CommandSender> conversations = new HashMap<>();
-    @Getter @Setter
-    public static ScheduledTask conversationsAutoDelete;
+    private static final HashMap<CommandSender, CommandSender> conversations = privateChat.getRelations();
 
     public MessageCommand() {
-        super("message", PermissionManager.GLOBALX_MESSAGE_SEND, "msg", "tell");
+        super("message", Permission.GLOBALX_PRIVATEMSG_SEND.getPermission(), "msg", "tell");
     }
 
     @Override
@@ -37,7 +35,7 @@ public class MessageCommand extends Command implements AddedCommand {
             return;
         }
 
-        if (args.length < 2 || !sender.hasPermission(PermissionManager.GLOBALX_MESSAGE_SEND)) {
+        if (args.length < 2 || !PermissionManager.hasPermission(sender, Permission.GLOBALX_PRIVATEMSG_SEND)) {
             ChatUtils.sendMessage(sender, messageConfig.getString("InsuffArgsMessage"));
             return;
         }
@@ -54,9 +52,9 @@ public class MessageCommand extends Command implements AddedCommand {
         String sendMSG = messageConfig.getString("PrivateMessageFormat.Send").replaceAll("%message%", message);
 
         if (args[0].equalsIgnoreCase("console")) {
-            ChatUtils.handleConsoleMessage(sender, receiveMSG, sendMSG, message);
+            privateChat.handleConsoleMessage(sender, receiveMSG, sendMSG, message);
         } else {
-            ChatUtils.handlePlayerMessage(sender, receiverName, receiveMSG, sendMSG, message);
+            privateChat.handlePlayerMessage(sender, receiverName, receiveMSG, sendMSG, message);
         }
     }
 

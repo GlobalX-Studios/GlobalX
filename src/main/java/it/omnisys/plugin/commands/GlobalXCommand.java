@@ -9,6 +9,8 @@ import net.md_5.bungee.api.plugin.Command;
 
 import it.omnisys.plugin.GlobalX;
 
+import java.util.ArrayList;
+
 public class GlobalXCommand extends Command implements AddedCommand {
     public GlobalXCommand() {
         super("globalx", "", "");
@@ -21,10 +23,20 @@ public class GlobalXCommand extends Command implements AddedCommand {
             return;
         }
 
-        if (args[0].equalsIgnoreCase("reload")) {
-            new ReloadCommand().execute(sender, args);
-        } else if (args[0].equalsIgnoreCase("help")) {
-            new HelpCommand().execute(sender, args);
+        switch (args[0]) {
+            case "reload": {
+                new ReloadCommand().execute(sender, args);
+                break;
+            }
+
+            case "help": {
+                new HelpCommand().execute(sender, args);
+                break;
+            }
+
+            default: {
+                new GlobalXCommand().execute(sender, new String[]{});
+            }
         }
     }
 

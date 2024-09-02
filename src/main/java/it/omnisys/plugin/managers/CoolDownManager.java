@@ -1,6 +1,9 @@
 package it.omnisys.plugin.managers;
 
 import it.omnisys.plugin.group.Group;
+import it.omnisys.plugin.managers.permissions.GroupManager;
+import it.omnisys.plugin.managers.permissions.Permission;
+import it.omnisys.plugin.managers.permissions.PermissionManager;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
@@ -9,8 +12,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import it.omnisys.plugin.GlobalX;
-
-import static it.omnisys.plugin.managers.PermissionManager.GLOBALX_GLOBALCHAT_COOLDOWN_BYPASS;
 
 public class CoolDownManager {
 
@@ -24,7 +25,7 @@ public class CoolDownManager {
         if (!(s instanceof ProxiedPlayer)) return;
         ProxiedPlayer p = (ProxiedPlayer) s;
 
-        if (p.hasPermission(GLOBALX_GLOBALCHAT_COOLDOWN_BYPASS)) return;
+        if (PermissionManager.hasPermission(s, Permission.GLOBALX_GLOBALCHAT_COOLDOWN_BYPASS)) return;
         if (!cooldown.contains(s)) {
             cooldown.add(p);
 

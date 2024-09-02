@@ -2,7 +2,8 @@ package it.omnisys.plugin.commands.privatemessages;
 
 import it.omnisys.plugin.GlobalX;
 import it.omnisys.plugin.commands.AddedCommand;
-import it.omnisys.plugin.managers.PermissionManager;
+import it.omnisys.plugin.managers.permissions.Permission;
+import it.omnisys.plugin.managers.permissions.PermissionManager;
 import it.omnisys.plugin.utils.ChatUtils;
 import lombok.Getter;
 import net.md_5.bungee.api.CommandSender;
@@ -19,12 +20,12 @@ public class BlockMessagesCommand extends Command implements AddedCommand {
     static List<CommandSender> blockingPlayers = new ArrayList<>();
 
     public BlockMessagesCommand() {
-        super("block", PermissionManager.GLOBALX_MESSAGE_BLOCK, "stopmsg", "blockmsg");
+        super("block", Permission.GLOBALX_PRIVATEMSG_BLOCK.getPermission(), "stopmsg", "blockmsg");
     }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        if (!sender.hasPermission(PermissionManager.GLOBALX_MESSAGE_BLOCK)) {
+        if (!PermissionManager.hasPermission(sender, Permission.GLOBALX_PRIVATEMSG_BLOCK)) {
             ChatUtils.sendMessage(sender, messageConfig.getString("NoPermsMSG"));
             return;
         }

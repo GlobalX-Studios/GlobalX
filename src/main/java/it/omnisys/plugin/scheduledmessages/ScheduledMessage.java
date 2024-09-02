@@ -17,8 +17,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ScheduledMessage {
 
-    private final Configuration mainConfig = GlobalX.getMainConfig();
-
     @Getter @Setter
     private String messageId;
     @Getter @Setter
@@ -32,7 +30,7 @@ public class ScheduledMessage {
     @Getter @Setter
     private List<String> servers;
     @Getter
-    private ScheduledTask task;
+    private final ScheduledTask task;
 
     public ScheduledMessage(String messageId, String message, long timeout, boolean repeat, List<String> servers, ClickEvent action, String value, String hover) {
         this.messageId = messageId;

@@ -1,8 +1,13 @@
 package it.omnisys.plugin.commands.privatemessages;
 
 import it.omnisys.plugin.GlobalX;
+import it.omnisys.plugin.chat.Chat;
+import it.omnisys.plugin.chat.Message;
+import it.omnisys.plugin.chat.PrivateChat;
 import it.omnisys.plugin.commands.AddedCommand;
-import it.omnisys.plugin.managers.PermissionManager;
+import it.omnisys.plugin.managers.chat.PrivateChatManager;
+import it.omnisys.plugin.managers.permissions.Permission;
+import it.omnisys.plugin.managers.permissions.PermissionManager;
 import it.omnisys.plugin.utils.ChatUtils;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -16,14 +21,15 @@ public class ReplyCommand extends Command implements AddedCommand {
 
     Configuration messageConfig = GlobalX.getMessagesConfig();
     Configuration mainConfig = GlobalX.getMainConfig();
+    Chat privateChat = PrivateChatManager.getPrivateChat();
 
     public ReplyCommand() {
-        super("reply", PermissionManager.GLOBALX_MESSAGE_REPLY, "r", "rep");
+        super("reply", Permission.GLOBALX_PRIVATEMSG_REPLY.getPermission(), "r", "rep");
     }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        if (!sender.hasPermission(PermissionManager.GLOBALX_MESSAGE_REPLY)) {
+        if (!PermissionManager.hasPermission(sender, Permission.GLOBALX_PRIVATEMSG_REPLY)) {
             ChatUtils.sendMessage(sender, messageConfig.getString("NoPermsMSG"));
             return;
         }
@@ -57,21 +63,25 @@ public class ReplyCommand extends Command implements AddedCommand {
         if (receiver instanceof ProxiedPlayer && !(sender instanceof ProxiedPlayer)) {
             ChatUtils.sendMessage(receiver, receiveMSG.replace("%player%", messageConfig.getString("ConsoleNameFormat")).replace("%server%", messageConfig.getString("ServerNameFormat").replace("%serverName%", messageConfig.getString("ConsoleServer"))));
             ChatUtils.sendMessage(sender, sendMSG.replace("%player%", ((ProxiedPlayer) receiver).getDisplayName()).replace("%server%", messageConfig.getString("ServerNameFormat").replace("%serverName%", ((ProxiedPlayer) receiver).getServer().getInfo().getName())));
+            privateChat.getMessages().add(new Message(message, sender, new Date(), GlobalX.getPlugin().getProxy().getConsole()));
         } else if (sender instanceof ProxiedPlayer && !(receiver instanceof ProxiedPlayer)) {
             ChatUtils.sendMessage(receiver, receiveMSG.replace("%player%", ((ProxiedPlayer) sender).getDisplayName()).replace("%server%", messageConfig.getString("ServerNameFormat").replace("%serverName%", ((ProxiedPlayer) sender).getServer().getInfo().getName())));
             ChatUtils.sendMessage(sender, sendMSG.replace("%player%", messageConfig.getString("ConsoleNameFormat")).replace("%server%", messageConfig.getString("ServerNameFormat").replace("%serverName%", messageConfig.getString("ConsoleServer"))));
+            privateChat.getMessages().add(new Message(message, sender, new Date(), GlobalX.getPlugin().getProxy().getConsole()));
         } else {
             assert receiver instanceof ProxiedPlayer;
             ChatUtils.sendMessage(sender, sendMSG.replace("%player%", ((ProxiedPlayer) receiver).getDisplayName()).replace("%server%", messageConfig.getString("ServerNameFormat").replace("%serverName%", ((ProxiedPlayer) receiver).getServer().getInfo().getName())));
             ChatUtils.sendMessage(receiver, receiveMSG.replace("%player%", ((ProxiedPlayer) sender).getDisplayName()).replace("%server%", messageConfig.getString("ServerNameFormat").replace("%serverName%", ((ProxiedPlayer) sender).getServer().getInfo().getName())));
+            privateChat.getMessages().add(new Message(message, sender, new Date(), receiver));
         }
 
-        if (MessageCommand.conversationsAutoDelete != null) {
-            MessageCommand.conversationsAutoDelete.cancel();
+
+        if (privateChat.getConversationsAutoDelete() != null) {
+            privateChat.getConversationsAutoDelete().cancel();
         }
-        MessageCommand.conversationsAutoDelete = GlobalX.getPlugin().getProxy().getScheduler().schedule(GlobalX.getPlugin(), () -> {
+        privateChat.setConversationsAutoDelete(GlobalX.getPlugin().getProxy().getScheduler().schedule(GlobalX.getPlugin(), () -> {
             MessageCommand.getConversations().remove(sender);
-        }, mainConfig.getInt("ConversationsAutoDelete"), TimeUnit.SECONDS);
+        }, mainConfig.getInt("ConversationsAutoDelete"), TimeUnit.SECONDS));
     }
 
     @Override
