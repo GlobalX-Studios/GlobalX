@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+subprojects {
+    group = 'it.globalx'
+    version = '1.0'
+
+    def targetJavaVersion = 8
+
+    task("prepareKotlinBuildScriptModel"){
+
+    }
+
+}

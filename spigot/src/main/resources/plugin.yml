@@ -1,0 +1,5 @@
+name: spigot
+version: '${version}'
+main: it.globalx.spigot.GlobalXSpigot
+depend:
+  - InventoryFramework

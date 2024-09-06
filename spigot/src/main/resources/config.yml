@@ -1,0 +1,14 @@
+#    ________      __          __   _  __
+#   / ____/ /___  / /_  ____ _/ /  | |/ /
+#  / / __/ / __ \\/ __ \\/ __ `/ /   |   /
+# / /_/ / / /_/ / /_/ / /_/ / /   /   |
+# \\____/_/\\____/_.___/\\__,_/_/   /_/|_|
+#
+# Main Config
+# Thanks for using GlobalX!
+
+socket: #GlobalX Use sockets to comunicate thru server, please insert there the socket ip and port
+  ip: "localhost"
+  port: 7000 # must be free
+
+
